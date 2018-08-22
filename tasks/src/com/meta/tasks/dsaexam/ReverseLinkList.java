@@ -2,15 +2,20 @@ package com.meta.tasks.dsaexam;
 
 import java.util.LinkedList;
 
+/**
+ * Link list which can be reversed.
+ * @author Abhay
+ * @param <Type> Type of the element to be stored
+ */
 public class ReverseLinkList <Type>{
 
 	public Node<Type> head;
 	public Node<Type> tail;
 	
-	public ReverseLinkList(){
-		
-	}
-	
+	/**
+	 * Adds an element to the end of the list
+	 * @param element  Value to be inserted in the node
+	 */
 	public void add(Type element){
 		if (head == null){
 			head = new Node(element);
@@ -21,6 +26,10 @@ public class ReverseLinkList <Type>{
 		}
 	}
 	
+	/**
+	 * Removes an element from the top of the list.
+	 * @return  Element removed
+	 */
 	public Type remove(){
 		if (head == null){
 			return null;
@@ -31,6 +40,9 @@ public class ReverseLinkList <Type>{
 		}
 	}
 	
+	/**
+	 * Reverses the link list
+	 */
 	public void reverse() {
 		if (head == null)
 			return;
@@ -39,6 +51,9 @@ public class ReverseLinkList <Type>{
 		add(removed);
 	}
 	
+	/**
+	 * Prints the list
+	 */
 	public void printAll(){
 		Node curr = head;
 		while(curr != null){
@@ -54,8 +69,10 @@ public class ReverseLinkList <Type>{
 		reverseLinkList.add(3);
 		reverseLinkList.add(4);
 		reverseLinkList.add(5);
+		System.out.println("ORIGINAL");
 		reverseLinkList.printAll();
 		reverseLinkList.reverse();
+		System.out.println("REVERSE");
 		reverseLinkList.printAll();
 	}
 }
